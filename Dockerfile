@@ -1,5 +1,5 @@
 # Install R
-FROM rocker/r-base:4.2.3
+FROM rocker/verse:4.2.3
 
 # Install curl & openssl
 RUN apt-get update \
@@ -34,13 +34,15 @@ COPY reproducible-data-analysis.Rproj reproducible-data-analysis.Rproj
 
 
 # Copy remaining folders
-COPY /data /data
-COPY /data-raw /data-raw
-COPY /doc /doc
-COPY /R /R
-COPY /man /man
+COPY ./data data/
+COPY ./data-raw data-raw/
+COPY ./doc doc/
+COPY ./R R/
+COPY ./man man/
 
 # Run targets
+CMD R -e "list.files('doc')"
+CMD R -e "targets::tar_make()"
 
 
 

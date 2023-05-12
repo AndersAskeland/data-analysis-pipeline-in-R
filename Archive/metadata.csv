@@ -1,4 +1,0 @@
-constant,type,column_name,display_name,col_type
-EDUCATION,NA,Education,Education,str
-BMI,NA,BMI,Body mass index (BMI),dbl
-DIABETES,NA,Diabetes,Diabetes status,str
